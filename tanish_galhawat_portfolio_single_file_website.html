@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tanish Galhawat · Portfolio</title>
+  <meta name="description" content="Portfolio of Tanish Galhawat — Information Technology student (BS, UMass Boston) with a minor in Business. Python, Excel, Digital Marketing." />
+  <meta name="author" content="Tanish Galhawat" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1220;           /* deep navy */
+      --panel:#0f172a;        /* slate/ink */
+      --muted:#94a3b8;        /* slate-400 */
+      --text:#e2e8f0;         /* slate-200 */
+      --brand:#60a5fa;        /* blue-400 */
+      --brand-2:#22d3ee;      /* cyan-400 */
+      --card:#0b1220;
+      --ring: 0 0 0 3px rgba(96,165,250,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"; color:var(--text); background: radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.08), transparent 60%), radial-gradient(900px 500px at 90% -10%, rgba(96,165,250,.10), transparent 60%), var(--bg);}    
+    a{color:inherit}
+    .container{width:min(1100px,92vw); margin-inline:auto}
+    header{position:sticky;top:0;background:linear-gradient(to bottom, rgba(11,18,32,.9), rgba(11,18,32,.6) 60%, transparent);backdrop-filter:saturate(1.1) blur(6px);z-index:20}
+    nav{display:flex;align-items:center;gap:24px;justify-content:space-between;padding:14px 0}
+    nav .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.2px}
+    .dot{width:12px;height:12px;border-radius:99px;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:0 0 18px rgba(96,165,250,.8)}
+    .links a{opacity:.9;text-decoration:none;padding:8px 12px;border-radius:10px}
+    .links a:hover{background:rgba(148,163,184,.12)}
+
+    .hero{display:grid;grid-template-columns: 1.2fr .9fr;gap:28px;align-items:center;padding:64px 0 24px}
+    .hero h1{font-weight:800;line-height:1.05;font-size:clamp(32px,5.6vw,52px);margin:0 0 10px}
+    .subtitle{color:var(--muted);font-size:clamp(16px,2.6vw,18px);max-width:60ch}
+    .cta{display:flex;gap:12px;margin-top:22px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;text-decoration:none;font-weight:600;border:1px solid rgba(148,163,184,.18);background:linear-gradient(180deg, rgba(96,165,250,.12), rgba(96,165,250,.08));}
+    .btn:hover{box-shadow:var(--ring)}
+    .btn.alt{background:transparent}
+    .portrait{justify-self:end; position:relative}
+    .portrait img{display:block;width:min(340px,38vw);height:auto;border-radius:22px;border:1px solid rgba(148,163,184,.25); box-shadow:0 20px 60px rgba(2,6,23,.55)}
+    .tag{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border:1px solid rgba(148,163,184,.2);border-radius:999px;color:var(--muted);background:rgba(15,23,42,.5);font-size:13px}
+
+    section{padding:38px 0}
+    h2{margin:0 0 18px;font-size:clamp(22px,3.5vw,30px)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+
+    .card{grid-column: span 12; background:linear-gradient(180deg, rgba(15,23,42,.9), rgba(11,18,32,.9)); border:1px solid rgba(148,163,184,.18); border-radius:var(--radius); padding:18px}
+
+    .two-col{display:grid;grid-template-columns:1.1fr 1fr;gap:18px}
+
+    .skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+    .chip{padding:10px 12px;border-radius:12px;background:rgba(148,163,184,.09);border:1px solid rgba(148,163,184,.18)}
+
+    .timeline{display:grid;gap:14px}
+    .item{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:start;padding:14px;border:1px solid rgba(148,163,184,.14);border-radius:14px;background:rgba(2,6,23,.35)}
+    .item time{color:var(--muted);font-size:13px}
+    .item h3{margin:0 0 6px;font-size:18px}
+    .item p{margin:6px 0;color:var(--muted)}
+
+    .edu{display:grid;gap:10px}
+
+    footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(148,163,184,.15);margin-top:28px}
+
+    /* responsive */
+    @media (max-width: 880px){
+      .hero{grid-template-columns:1fr;}
+      .portrait{justify-self:start}
+      .two-col{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand"><span class="dot"></span> <span>Tanish Galhawat</span></div>
+        <div class="links">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="tag">Boston, MA · Information Technology · Business Analytics</span>
+        <h1>Information Technology student with a business minor—turning data, code, and people skills into real results.</h1>
+        <p class="subtitle">I’m an IT student at UMass Boston (Class of 2027). I’ve supported university operations and student success as a College of Management Ambassador, Department Assistant, and Orientation Leader. I enjoy Python, Excel, digital marketing, and building helpful tools and experiences.</p>
+        <div class="cta">
+          <a class="btn" href="assets/Tanish-Galhawat-Resume.pdf" download>Download Résumé</a>
+          <a class="btn alt" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="portrait">
+        <!-- Replace src below with your actual image path, e.g. assets/tanish.jpg -->
+        <img alt="Portrait of Tanish Galhawat" src="assets/profile.jpg" />
+      </div>
+    </section>
+
+    <section id="about" class="two-col">
+      <div class="card">
+        <h2>About</h2>
+        <p class="subtitle">I like solving real problems with a blend of technical and people skills—automating small workflows in Python, organizing information in spreadsheets and dashboards, and communicating clearly so teams move faster.</p>
+        <p class="subtitle">Beyond class, I’ve helped incoming students navigate UMass Boston, supported the Office of the Vice Chancellor for Student Affairs, and represented the College of Management at events.</p>
+      </div>
+      <div class="card">
+        <h2>Highlights</h2>
+        <ul>
+          <li>Python automation & data cleaning</li>
+          <li>Excel reporting & dashboards</li>
+          <li>Digital marketing basics (SEO, analytics)</li>
+          <li>Event support & frontline customer service</li>
+          <li>Public speaking & mentorship</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="experience" class="card">
+      <h2>Experience & Leadership</h2>
+      <div class="timeline">
+        <div class="item">
+          <time>Oct 2025 – Present</time>
+          <div>
+            <h3>College of Management Student Ambassador · UMass Boston</h3>
+            <p>Represent the College at events; mentor prospective and current students; share feedback with faculty; participate in trainings and initiatives.</p>
+          </div>
+        </div>
+        <div class="item">
+          <time>Jun 2025 – Present</time>
+          <div>
+            <h3>Department Assistant · Office of the Vice Chancellor for Student Affairs, UMass Boston</h3>
+            <p>First point of contact assisting 100+ students, staff, and visitors weekly; manage calls and appointments; support scheduling and event coordination.</p>
+          </div>
+        </div>
+        <div class="item">
+          <time>Jan 2025 – Oct 2025</time>
+          <div>
+            <h3>Orientation Leader · New Student & Family Programs, UMass Boston</h3>
+            <p>Guided 100+ incoming students through orientation; facilitated group activities; answered questions on campus life, academics, and policies.</p>
+          </div>
+        </div>
+        <div class="item">
+          <time>Apr 2023 – Aug 2023</time>
+          <div>
+            <h3>Intern · UC Estate Agency (Faridabad, India)</h3>
+            <p>Managed spreadsheets, designed promotional materials, supported marketing presentations, and handled client inquiries with 90%+ satisfaction.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="card">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="chip">Python</div>
+        <div class="chip">Microsoft Excel</div>
+        <div class="chip">Google Analytics</div>
+        <div class="chip">Google Ads</div>
+        <div class="chip">Tableau</div>
+        <div class="chip">Canva</div>
+        <div class="chip">Public Speaking</div>
+        <div class="chip">Team Collaboration</div>
+        <div class="chip">Customer Service</div>
+        <div class="chip">Leadership</div>
+        <div class="chip">Problem Solving</div>
+      </div>
+    </section>
+
+    <section id="education" class="two-col">
+      <div class="card">
+        <h2>Education</h2>
+        <div class="edu">
+          <div>
+            <strong>University of Massachusetts Boston</strong><br />
+            B.S. in Information Technology · Minor in Business Administration (GPA 3.4) · Class of 2027 · Boston, MA
+          </div>
+          <div>
+            <strong>Manav Rachna International School</strong><br />
+            Higher Secondary Certificate (CBSE) · Subjects: Computer Science, Mathematics, English Core
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Certifications & Courses</h2>
+        <ul>
+          <li>Udemy: Digital Marketing & Python Programming (2021–2023)</li>
+        </ul>
+        <p class="subtitle">Open to internships in IT / Business Analytics / Operations.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p>Open to internship and collaboration opportunities. The fastest way to reach me is by email.</p>
+      <div class="grid">
+        <div class="card" style="grid-column: span 6">
+          <h3 style="margin:6px 0">Email</h3>
+          <a href="mailto:tanishgal2@gmail.com">tanishgal2@gmail.com</a>
+        </div>
+        <div class="card" style="grid-column: span 6">
+          <h3 style="margin:6px 0">LinkedIn</h3>
+          <a href="https://www.linkedin.com/in/tanish-galhawat" target="_blank" rel="noopener">in/tanish-galhawat</a>
+        </div>
+        <div class="card" style="grid-column: span 6">
+          <h3 style="margin:6px 0">Phone</h3>
+          <a href="tel:+18573955773">+1 (857) 395-5773</a>
+        </div>
+        <div class="card" style="grid-column: span 6">
+          <h3 style="margin:6px 0">Location</h3>
+          Boston, Massachusetts, USA
+        </div>
+      </div>
+    </section>
+
+    <footer class="container">
+      <div>
+        © <span id="y"></span> Tanish Galhawat · Built with vanilla HTML/CSS. 
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

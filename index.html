@@ -417,17 +417,37 @@
     // Formspree (replace action URL when you create your form)
     const form = document.getElementById('contactForm');
     const msg = document.getElementById('formMsg');
-    if(form){
-      form.addEventListener('submit', async (e)=>{
-        e.preventDefault();
-        msg.textContent = 'Sending…';
-        try{
-          const res = await fetch(form.action, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}});
-          if(res.ok){ msg.textContent = 'Thanks! I will get back to you shortly.'; form.reset(); }
-          else{ msg.textContent = 'Something went wrong. Please email tanishgal2@gmail.com.'; }
-        }catch(err){ msg.textContent = 'Network error. Please try again later.'; }
-      });
-    }
-  </script>
-</body>
-</html>
+    <script>
+  const form = document.getElementById('contactForm');
+  const msg  = document.getElementById('formMsg');
+  const btn  = document.getElementById('sendBtn');
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+
+      msg.textContent = 'Sending…';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          msg.textContent = '✅ Thanks! Your message has been sent.';
+          form.reset();
+        } else {
+          msg.textContent = '⚠️ Something went wrong. Please email tanishgal2@gmail.com.';
+        }
+      } catch {
+        msg.textContent = '⚠️ Network error. Please try again later.';
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  }
+</script>

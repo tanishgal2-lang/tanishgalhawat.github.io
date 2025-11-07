@@ -102,11 +102,40 @@
       .portrait{justify-self:start}
       .two-col{grid-template-columns:1fr}
     }
-    @media (max-width:600px){
-      section{padding:20px 0}
-      .card{padding:14px;margin-bottom:14px}
-      .item{grid-template-columns:1fr}
-    }
+    @media (max-width:600px) {
+  /* Overall tighter layout */
+  section { padding: 16px 0; }
+  .card { padding: 12px; margin-bottom: 12px; }
+
+  /* Headings smaller */
+  .hero h1 {
+    font-size: clamp(22px, 6vw, 32px);
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: clamp(18px, 5vw, 24px);
+  }
+
+  /* Subtitles easier to read */
+  .subtitle {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  /* Hero layout stack */
+  .hero { gap: 12px; }
+
+  /* Make portrait smaller */
+  .portrait img { width: 220px; }
+
+  /* Buttons smaller */
+  .btn { padding: 10px 14px; font-size: 15px; }
+
+  /* Reduce grid spacing */
+  .two-col, .grid, .skills, .proj { gap: 10px; }
+}
+
   </style>
 </head>
 <body>

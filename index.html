@@ -1,4 +1,3 @@
-<!-- rebuild -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,52 +6,80 @@
   <title>Tanish Galhawat · Portfolio</title>
   <meta name="description" content="Portfolio of Tanish Galhawat — Information Technology student (BS, UMass Boston) with a minor in Business. Python, Excel, Digital Marketing." />
   <meta name="author" content="Tanish Galhawat" />
+  <link rel="canonical" href="https://tanishgal2-lang.github.io/">
+  <!-- Social preview -->
+  <meta property="og:title" content="Tanish Galhawat · Portfolio" />
+  <meta property="og:description" content="Information Technology student (UMass Boston) — turning data, code, and people skills into real results." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tanishgal2-lang.github.io/" />
+  <meta property="og:image" content="https://tanishgal2-lang.github.io/profile.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tanish Galhawat · Portfolio" />
+  <meta name="twitter:description" content="Information Technology student (UMass Boston) — turning data, code, and people skills into real results." />
+  <meta name="twitter:image" content="https://tanishgal2-lang.github.io/profile.jpg" />
+  <!-- Favicon (inline SVG, crisp on all devices) -->
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="18" fill="%230c1220"/><text x="50" y="62" font-size="56" text-anchor="middle" fill="%232563eb" font-family="Arial, Helvetica, sans-serif">TG</text></svg>' />
+  <meta name="theme-color" content="#0c1220" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0b1220;           /* deep navy */
+      --bg:#0c1220;           /* deep navy */
       --panel:#0f172a;        /* slate/ink */
-      --muted:#94a3b8;        /* slate-400 */
-      --text:#e2e8f0;         /* slate-200 */
-      --brand:#60a5fa;        /* blue-400 */
-      --brand-2:#22d3ee;      /* cyan-400 */
-      --card:#0b1220;
-      --ring: 0 0 0 3px rgba(96,165,250,.35);
-      --radius: 18px;
+      --muted:#9aa5b5;        /* slate-400 */
+      --text:#e6edf6;         /* light text */
+      --brand:#2563eb;        /* indigo/blue */
+      --brand-2:#22d3ee;      /* cyan */
+      --card:#0f1627;         /* panels */
+      --ring:0 0 0 3px rgba(37,99,235,.35);
+      --radius:18px;
     }
     *{box-sizing:border-box}
     html,body{margin:0;height:100%;scroll-behavior:smooth}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"; color:var(--text); background: radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.08), transparent 60%), radial-gradient(900px 500px at 90% -10%, rgba(96,165,250,.10), transparent 60%), var(--bg);}    
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"; color:var(--text); background: radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.10), transparent 60%), radial-gradient(900px 500px at 90% -10%, rgba(37,99,235,.12), transparent 65%), var(--bg);}    
     a{color:inherit}
     .container{width:min(1100px,92vw); margin-inline:auto}
-    header{position:sticky;top:0;background:linear-gradient(to bottom, rgba(11,18,32,.9), rgba(11,18,32,.6) 60%, transparent);backdrop-filter:saturate(1.1) blur(6px);z-index:20}
+
+    /* header */
+    header{position:sticky;top:0;background:linear-gradient(to bottom, rgba(12,18,32,.96), rgba(12,18,32,.78) 60%, transparent);backdrop-filter:saturate(1.1) blur(6px);z-index:20;border-bottom:1px solid rgba(148,163,184,.12)}
     nav{display:flex;align-items:center;gap:24px;justify-content:space-between;padding:14px 0}
     nav .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.2px}
-    .dot{width:12px;height:12px;border-radius:99px;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:0 0 18px rgba(96,165,250,.8)}
-    .links a{opacity:.9;text-decoration:none;padding:8px 12px;border-radius:10px}
+    .dot{width:12px;height:12px;border-radius:99px;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:0 0 18px rgba(37,99,235,.8)}
+    .links{display:flex;gap:6px}
+    .links a{opacity:.92;text-decoration:none;padding:8px 12px;border-radius:10px}
     .links a:hover{background:rgba(148,163,184,.12)}
+    #navToggle{display:none;border:1px solid rgba(148,163,184,.2);background:rgba(37,99,235,.12);color:var(--text);padding:8px 10px;border-radius:10px}
 
-    .hero{display:grid;grid-template-columns: 1.2fr .9fr;gap:28px;align-items:center;padding:64px 0 24px}
-    .hero h1{font-weight:800;line-height:1.05;font-size:clamp(32px,5.6vw,52px);margin:0 0 10px}
-    .subtitle{color:var(--muted);font-size:clamp(16px,2.6vw,18px);max-width:60ch}
-    .cta{display:flex;gap:12px;margin-top:22px}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;text-decoration:none;font-weight:600;border:1px solid rgba(148,163,184,.18);background:linear-gradient(180deg, rgba(96,165,250,.12), rgba(96,165,250,.08));}
+    /* hero */
+    .hero{display:grid;grid-template-columns:1.25fr .9fr;gap:28px;align-items:center;padding:56px 0 20px}
+    .hero h1{font-weight:800;line-height:1.05;font-size:clamp(30px,5.2vw,50px);margin:0 0 10px}
+    .subtitle{color:var(--muted);font-size:clamp(16px,2.2vw,18px);max-width:60ch}
+    .cta{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;text-decoration:none;font-weight:600;border:1px solid rgba(148,163,184,.18);background:linear-gradient(180deg, rgba(37,99,235,.14), rgba(37,99,235,.08));}
     .btn:hover{box-shadow:var(--ring)}
     .btn.alt{background:transparent}
     .portrait{justify-self:end; position:relative}
     .portrait img{display:block;width:min(340px,38vw);height:auto;border-radius:22px;border:1px solid rgba(148,163,184,.25); box-shadow:0 20px 60px rgba(2,6,23,.55)}
-    .tag{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border:1px solid rgba(148,163,184,.2);border-radius:999px;color:var(--muted);background:rgba(15,23,42,.5);font-size:13px}
+    .tag{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border:1px solid rgba(148,163,184,.22);border-radius:999px;color:var(--muted);background:rgba(15,23,42,.55);font-size:13px}
 
-    section{padding:38px 0}
-    h2{margin:0 0 18px;font-size:clamp(22px,3.5vw,30px)}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    section{padding:32px 0}
+    .badges{display:flex;flex-wrap:wrap;gap:6px}
+    .badge{font-size:12px;padding:6px 8px;border-radius:999px;border:1px solid rgba(148,163,184,.22);color:var(--muted)}
+    .projects{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .project{grid-column: span 12;display:grid;gap:10px;padding:16px;border:1px solid rgba(148,163,184,.18);border-radius:16px;background:rgba(2,6,23,.35)}
+    .project h3{margin:0}
+    .project p{margin:6px 0;color:var(--muted)}
+    .project .links{gap:8px}
 
-    .card{grid-column: span 12; background:linear-gradient(180deg, rgba(15,23,42,.9), rgba(11,18,32,.9)); border:1px solid rgba(148,163,184,.18); border-radius:var(--radius); padding:18px}
+    /* reveal animations */
+    .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease}
+    .reveal.on{opacity:1;transform:none}
+    h2{margin:0 0 16px;font-size:clamp(22px,3.1vw,28px)}
 
-    .two-col{display:grid;grid-template-columns:1.1fr 1fr;gap:18px}
+    .card{background:linear-gradient(180deg, rgba(15,23,42,.92), rgba(11,18,32,.92)); border:1px solid rgba(148,163,184,.18); border-radius:var(--radius); padding:18px}
 
+    .two-col{display:grid;grid-template-columns:1.05fr 1fr;gap:18px}
     .skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
     .chip{padding:10px 12px;border-radius:12px;background:rgba(148,163,184,.09);border:1px solid rgba(148,163,184,.18)}
 
@@ -62,15 +89,27 @@
     .item h3{margin:0 0 6px;font-size:18px}
     .item p{margin:6px 0;color:var(--muted)}
 
-    .edu{display:grid;gap:10px}
+    .contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .contact-grid .mini{padding:14px;border:1px solid rgba(148,163,184,.14);border-radius:14px;background:rgba(2,6,23,.35)}
+    .contact-grid a{overflow-wrap:anywhere;word-break:break-word}
 
-    footer{padding:40px 0;color:var(--muted);border-top:1px solid rgba(148,163,184,.15);margin-top:28px}
-
-    /* responsive */
+    /* mobile refinements */
     @media (max-width: 880px){
-      .hero{grid-template-columns:1fr;}
-      .portrait{justify-self:start}
+      #navToggle{display:inline-flex}
+      .links{position:absolute;right:16px;top:58px;display:none;flex-direction:column;background:rgba(2,6,23,.96);border:1px solid rgba(148,163,184,.18);border-radius:14px;padding:10px}
+      .links.open{display:flex}
+      .hero{grid-template-columns:1fr;gap:18px;padding-top:22px}
+      .portrait{justify-self:center}
+      .portrait img{width:min(260px,60vw)}
+      .cta .btn{width:100%;justify-content:center}
       .two-col{grid-template-columns:1fr}
+      .item{grid-template-columns:1fr;}
+      .contact-grid{grid-template-columns:1fr 1fr}
+    }
+
+    @media (max-width: 520px){
+      .hero h1{font-size:28px}
+      .contact-grid{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -79,13 +118,15 @@
     <div class="container">
       <nav>
         <div class="brand"><span class="dot"></span> <span>Tanish Galhawat</span></div>
-        <div class="links">
+        <div class="links" id="navLinks">
           <a href="#about">About</a>
           <a href="#experience">Experience</a>
+          <a href="#additional">Additional</a>
           <a href="#skills">Skills</a>
           <a href="#education">Education</a>
           <a href="#contact">Contact</a>
         </div>
+        <button id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
       </nav>
     </div>
   </header>
@@ -102,7 +143,6 @@
         </div>
       </div>
       <div class="portrait">
-        <!-- Replace src below with your actual image path, e.g. assets/tanish.jpg -->
         <img alt="Portrait of Tanish Galhawat" src="profile.jpg" />
       </div>
     </section>
@@ -159,6 +199,57 @@
       </div>
     </section>
 
+    <!-- Projects -->
+    <section id="projects" class="card reveal">
+      <h2>Projects</h2>
+      <div class="projects">
+        <article class="project" style="grid-column:span 12;">
+          <h3>Campus Event Helper</h3>
+          <p>Lightweight web tool that generates checklists and schedules for student events; improved setup speed for small teams.</p>
+          <div class="badges"><span class="badge">HTML/CSS</span><span class="badge">Vanilla JS</span><span class="badge">Accessibility</span></div>
+          <div class="links"><a class="btn alt" href="#" onclick="return false;">Live (coming soon)</a><a class="btn alt" href="#" onclick="return false;">Code</a></div>
+        </article>
+        <article class="project" style="grid-column:span 12;">
+          <h3>Python Data Cleanup Scripts</h3>
+          <p>Reusable Python snippets to clean CSVs and produce quick summaries for office reports.</p>
+          <div class="badges"><span class="badge">Python</span><span class="badge">Pandas</span><span class="badge">CSV</span></div>
+        </article>
+        <article class="project" style="grid-column:span 12;">
+          <h3>Excel KPI Dashboard</h3>
+          <p>Template for weekly metrics with conditional formatting and slicers for non‑technical users.</p>
+          <div class="badges"><span class="badge">Excel</span><span class="badge">Visualization</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Additional Experience (older roles that didn't fit the 1‑page resume) -->
+    <section id="additional" class="card">
+      <h2>Additional Experience</h2>
+      <div class="timeline">
+        <div class="item">
+          <time>2023</time>
+          <div>
+            <h3>Digital Marketing Coursework · Udemy</h3>
+            <p>Hands‑on practice with Google Ads and Analytics fundamentals; built small campaigns and dashboards.</p>
+          </div>
+        </div>
+        <div class="item">
+          <time>2020</time>
+          <div>
+            <h3>Volunteer · Red Cross Blood Donation</h3>
+            <p>Supported donor check‑in and logistics; ensured a welcoming experience for participants.</p>
+          </div>
+        </div>
+        <div class="item">
+          <time>2019</time>
+          <div>
+            <h3>Student Sports & Events · Manav Rachna International School</h3>
+            <p>Helped organize inter‑school tournaments and coordinate team communications.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="skills" class="card">
       <h2>Skills</h2>
       <div class="skills">
@@ -199,39 +290,92 @@
       </div>
     </section>
 
-    <section id="contact" class="card">
+    <section id="contact" class="card reveal">
       <h2>Contact</h2>
-      <p>Open to internship and collaboration opportunities. The fastest way to reach me is by email.</p>
-      <div class="grid">
-        <div class="card" style="grid-column: span 6">
-          <h3 style="margin:6px 0">Email</h3>
+      <p>Open to internship and collaboration opportunities. Use the form or contact me directly.</p>
+      <div class="contact-grid">
+        <div class="mini"><h3 style="margin:6px 0">Email</h3>
           <a href="mailto:tanishgal2@gmail.com">tanishgal2@gmail.com</a>
         </div>
-        <div class="card" style="grid-column: span 6">
-          <h3 style="margin:6px 0">LinkedIn</h3>
+        <div class="mini"><h3 style="margin:6px 0">LinkedIn</h3>
           <a href="https://www.linkedin.com/in/tanish-galhawat" target="_blank" rel="noopener">in/tanish-galhawat</a>
         </div>
-        <div class="card" style="grid-column: span 6">
-          <h3 style="margin:6px 0">Phone</h3>
+        <div class="mini"><h3 style="margin:6px 0">Phone</h3>
           <a href="tel:+18573955773">+1 (857) 395-5773</a>
         </div>
-        <div class="card" style="grid-column: span 6">
-          <h3 style="margin:6px 0">Location</h3>
+        <div class="mini"><h3 style="margin:6px 0">Location</h3>
           Boston, Massachusetts, USA
+        </div>
+      </div>
+      <div style="margin-top:16px" class="two-col">
+        <form id="contactForm" class="card" style="padding:16px;background:rgba(2,6,23,.35)" method="POST" action="https://formspree.io/f/your_form_id_here">
+          <h3 style="margin:0 0 10px">Send a message</h3>
+          <div class="grid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <input name="name" placeholder="Your name" required style="padding:12px;border-radius:10px;border:1px solid rgba(148,163,184,.25);background:rgba(15,23,42,.6);color:var(--text)" />
+            <input name="email" type="email" placeholder="Your email" required style="padding:12px;border-radius:10px;border:1px solid rgba(148,163,184,.25);background:rgba(15,23,42,.6);color:var(--text)" />
+            <textarea name="message" placeholder="Your message" rows="5" style="grid-column:span 2;padding:12px;border-radius:10px;border:1px solid rgba(148,163,184,.25);background:rgba(15,23,42,.6);color:var(--text)"></textarea>
+          </div>
+          <button class="btn" type="submit" style="margin-top:10px">Send</button>
+          <div id="formMsg" class="subtitle" style="margin-top:8px"></div>
+        </form>
+        <div class="card" style="background:rgba(2,6,23,.35)">
+          <h3 style="margin:0 0 10px">Availability</h3>
+          <p class="subtitle">Boston‑area internships (IT / Business Analytics). Open to part‑time roles during the semester.</p>
         </div>
       </div>
     </section>
 
     <footer class="container">
       <div>
-        © <span id="y"></span> Tanish Galhawat · Built with vanilla HTML/CSS. 
+        © <span id="y"></span> Tanish Galhawat · Built with vanilla HTML/CSS.
       </div>
     </footer>
   </main>
 
   <script>
-    // year
+    // footer year
     document.getElementById('y').textContent = new Date().getFullYear();
+    // mobile menu
+    const btn = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    if(btn && links){
+      btn.addEventListener('click', ()=>{
+        const open = links.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+  </script>
+  <script>
+    // footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // mobile menu
+    const btn = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    if(btn && links){
+      btn.addEventListener('click', ()=>{
+        const open = links.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    // reveal on scroll
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('on'); });
+    },{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    // simple Formspree submit (replace your_form_id_here with your actual ID)
+    const form = document.getElementById('contactForm');
+    const msg = document.getElementById('formMsg');
+    if(form){
+      form.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        msg.textContent = 'Sending…';
+        try{
+          const res = await fetch(form.action, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}});
+          if(res.ok){ msg.textContent = 'Thanks! I will get back to you shortly.'; form.reset(); }
+          else{ msg.textContent = 'Something went wrong. Please email tanishgal2@gmail.com.'; }
+        }catch(err){ msg.textContent = 'Network error. Please try again later.'; }
+      });
+    }
   </script>
 </body>
 </html>
